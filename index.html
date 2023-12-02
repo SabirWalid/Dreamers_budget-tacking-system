@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Budget Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background-color: #f4f4f4;
+      color: #05244D;
+    }
+
+    header {
+      background-color: #05244D;
+      color: #ffffff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1, h2, h3 {
+      color: #05244D;
+    }
+
+    .hero-section {
+      background-color: #FAC818;
+      color: #05244D;
+      padding: 50px;
+      text-align: center;
+    }
+
+    #introduction, #cards, #solution, #team, #cta, #footer {
+      padding: 40px;
+      margin: 20px 0;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    #cards {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      flex: 1 1 300px;
+      padding: 20px;
+      margin: 10px;
+      text-align: center;
+    }
+
+    .cta-section {
+      background-color: #05244D;
+      color: #ffffff;
+      text-align: center;
+      padding: 50px;
+    }
+
+    footer {
+      background-color: #05244D;
+      color: #ffffff;
+      text-align: center;
+      padding: 20px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    @media (max-width: 768px) {
+      #cards {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .card {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Budget Tracker</h1>
+  </header>
+
+  <div class="hero-section">
+    <h2>Hero Section</h2>
+    <p>Login to your account</p>
+  </div>
+
+  <section id="introduction">
+    <h2>Project Introduction</h2>
+    <p>Your introduction content goes here.</p>
+  </section>
+
+  <section id="cards">
+    <div class="card">
+      <h3>Mission</h3>
+      <p>Your mission statement goes here.</p>
+    </div>
+    <div class="card">
+      <h3>Vision</h3>
+      <p>Your vision statement goes here.</p>
+    </div>
+    <div class="card">
+      <h3>Goals</h3>
+      <p>Your project goals go here.</p>
+    </div>
+  </section>
+
+  <section id="solution">
+    <h2>Project Solution</h2>
+    <p>Your solution details go here.</p>
+  </section>
+
+  <section id="team">
+    <h2>Team Members</h2>
+    <p>Your team members and their roles go here.</p>
+  </section>
+
+  <div id="cta" class="cta-section">
+    <h2>Call to Action</h2>
+    <p>Sign up now to start tracking your budget!</p>
+  </div>
+
+  <footer>
+    <p>&copy; 2023 Budget Tracker. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

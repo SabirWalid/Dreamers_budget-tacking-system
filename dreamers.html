@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Budget Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ... (existing styles) ... */
+
+    #dashboard, #keyMetrics, #expenses {
+      padding: 40px;
+      margin: 20px 0;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .metric {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 20px;
+    }
+
+    .metric-item {
+      flex: 1 1 200px;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .expenses-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .expenses-list {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ... (existing content) ... -->
+
+  <section id="dashboard">
+    <h2>Dashboard</h2>
+    <!-- Add your dashboard components here -->
+    <div class="metric">
+      <div class="metric-item">
+        <h3>Total Budget</h3>
+        <p>$XX,XXX</p>
+      </div>
+      <div class="metric-item">
+        <h3>Remaining Budget</h3>
+        <p>$XX,XXX</p>
+      </div>
+      <div class="metric-item">
+        <h3>Expenses</h3>
+        <p>$XX,XXX</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="keyMetrics">
+    <h2>Key Metrics</h2>
+    <div class="metric">
+      <div class="metric-item">
+        <h3>Monthly Income</h3>
+        <p>$XX,XXX</p>
+      </div>
+      <div class="metric-item">
+        <h3>Monthly Savings</h3>
+        <p>$XX,XXX</p>
+      </div>
+      <div class="metric-item">
+        <h3>Emergency Fund</h3>
+        <p>$XX,XXX</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="expenses">
+    <h2>Expenses Tracking</h2>
+    <div class="expenses-form">
+      <label for="expenseDescription">Description:</label>
+      <input type="text" id="expenseDescription" name="expenseDescription" required>
+
+      <label for="expenseAmount">Amount:</label>
+      <input type="number" id="expenseAmount" name="expenseAmount" required>
+
+      <button type="button" onclick="addExpense()">Add Expense</button>
+    </div>
+
+    <div class="expenses-list">
+      <h3>Expense List</h3>
+      <ul id="expenseList"></ul>
+    </div>
+  </section>
+
+  <script>
+    // ... (existing scripts) ...
+
+    async function fetchExpenses() {
+      const response = await fetch('/api/expenses');
+      const expenses = await response.json();
+      displayExpenses(expenses);
+    }
+
+    function displayExpenses(expenses) {
+      const expenseList = document.getElementById('expenseList');
+      expenseList.innerHTML = '';
+
+      expenses.forEach(expense => {
+        const listItem = document.createElement('li');
+        listItem.textContent = `${expense.description}: $${expense.amount}`;
+        expenseList.appendChild(listItem);
+      });
+    }
+
+    async function addExpense() {
+      const description = document.getElementById('expenseDescription').value;
+      const amount = document.getElementById('expenseAmount').value;
+
+      if (description && amount) {
+        const response = await fetch('/api/expenses', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ description, amount }),
+        });
+
+        const newExpense = await response.json();
+        fetchExpenses();
+      }
+    }
+
+    // Initial fetch on page load
+    fetchExpenses();
+  </script>
+
+</body>
+</html>
