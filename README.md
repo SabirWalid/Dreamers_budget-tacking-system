@@ -2,7 +2,7 @@ Dreamers Budget Tracking System
 The Dreamers Budget Tracking System is a simple and intuitive application designed to help users effectively manage and track their personal finances. This system provides a user-friendly interface to record expenses, monitor income, and generate insightful reports, empowering individuals to make informed financial decisions.
 
 Features
-Expense Tracking: Easily record and categorize expenses for a comprehensive overview of spending habits.
+Expense Tracking: Easily record and categorize expenses to comprehensively analyze spending habits.
 Income Management: Keep track of various sources of income to understand your overall financial picture.
 Custom Categories: Create personalized spending categories to suit your specific budgeting needs.
 Reporting: Generate detailed reports and visual graphs to analyze spending patterns over time.
@@ -26,13 +26,13 @@ Open your web browser and navigate to http://localhost:3000 to use the applicati
 Usage
 Upon accessing the application, create an account or log in to an existing account.
 Navigate through the dashboard to add expenses, manage income, view reports, and customize categories.
-Ensure regular updates of financial data to maintain accurate records.
+Could you make sure regular updates of financial data to maintain accurate records?
 
 Technologies Used
 Node.js: Backend server environment
 Express.js: Web application framework
 MYSQL: Database management system
-HTML5,CSS3: Frontend library for building user interfaces
+HTML5, CSS3: Frontend library for building user interfaces
 Chart.js: JavaScript library for creating charts and graphs
 
 Contributors
@@ -41,12 +41,12 @@ Sabir Abdurahman Walid@SabirWalid
 Prince Iranzi@iranziprince01
 Islam Omar@Islam-19984
 Noella Uwayo@n-uwayo
-Innocent Manzi@manzi
+Innocent Manzi@innocentmanzi
 License
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the M.I.T. License - see the LICENSE file for details.
 
 Acknowledgments
-Special thanks to Peline and the entire BSE coaching staff for inspiration and guidance during the development of this project.
+Special thanks to Perline and the entire B.S.E. coaching staff for inspiration and guidance during the development of this project.
 
 
 
