@@ -6,12 +6,50 @@
   <title>Budget Tracker</title>
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* ... (existing styles) ... */
+     nav {
+      background-color: #333;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
 
-    #dashboard, #keyMetrics, #expenses {
+    ul {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    li {
+      margin-right: 10px;
+    }
+
+    li a {
+      color: #fff;
+      text-decoration: none;
+      padding: 5px;
+    }
+
+    li a:hover {
+      background-color: #fff;
+      color: #333;
+    }
+
+    @media (max-width: 600px) {
+      .metric-item {
+        flex-basis: 100%;
+      }
+    }
+
+    .metric-item {
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .metric-item:hover {
+      transform: scale(1.1);
+    }
+
+    #dashboard, #keyMetrics, #expenses, #meetTheTeam, #contactUs {
       padding: 40px;
       margin: 20px 0;
-      background-color: #ffffff;
+      background-color: pink;
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
@@ -37,11 +75,35 @@
     .expenses-list {
       margin-top: 20px;
     }
+
+    #meetTheTeam {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 50px;
+  }
+
+  .team-member {
+    width: 30%;
+    margin-bottom: 20px;
+  }
   </style>
 </head>
 <body>
+  <header>
+    <div>
+    <nav>
+      <ul>
+          <li><a href="#dashboard">Dashboard</a></li>
+          <li><a href="#keymetrics">KeyMetrics</a></li>
+          <li><a href="#expenses">Expenses</a></li>
+          <li><a href="#meet the team">Meet the Team</a></li>
+          <li><a href="#contact us">Contact Us</a></li>
+      </ul>
+  </nav>
+  </div>
 
-  <!-- ... (existing content) ... -->
+  </header>
 
   <section id="dashboard">
     <h2>Dashboard</h2>
@@ -98,6 +160,62 @@
     </div>
   </section>
 
+  <section id="meetTheTeam">
+    <h2>Meet the Team</h2>
+  
+    <div class="team-member">
+      <img src="team-member-1.jpg" alt="Team Member 1">
+      <h3>Joshua Malong</h3>
+      <p>Role: </p>
+    </div>
+  
+    <div class="team-member">
+      <img src="team-member-2.jpg" alt="Team Member 2">
+      <h3>Islam Hemada</h3>
+      <p>Role: </p>
+    </div>
+
+    <div class="team-member">
+      <img src="team-member-2.jpg" alt="Team Member 2">
+      <h3>Prince Iranzi</h3>
+      <p>Role: </p>
+    </div>
+
+    <div class="team-member">
+      <img src="team-member-2.jpg" alt="Team Member 2">
+      <h3>Sabir Abdurahman</h3>
+      <p>Role: </p>
+    </div>
+
+    <div class="team-member">
+      <img src="team-member-2.jpg" alt="Team Member 2">
+      <h3>Noella Uwase</h3>
+      <p>Role: </p>
+    </div>
+
+    <div class="team-member">
+      <img src="team-member-2.jpg" alt="Team Member 2">
+      <h3>Innocent Manzi</h3>
+      <p>Role: </p>
+    </div>
+
+
+    <section id="contactUs">
+      <h2>Contact Us</h2>
+      <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+  
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+  
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+  
+        <input type="submit" value="Submit">
+      </form>
+    </section>
+
   <script>
     // ... (existing scripts) ...
 
@@ -135,6 +253,17 @@
         fetchExpenses();
       }
     }
+    
+    const metricItems = document.querySelectorAll('.metric-item');
+    metricItems.forEach(item => {
+      item.addEventListener('mouseover', () => {
+        item.style.transform = 'scale(1.1)';
+      });
+
+      item.addEventListener('mouseout', () => {
+        item.style.transform = 'scale(1)';
+      });
+    });
 
     // Initial fetch on page load
     fetchExpenses();
