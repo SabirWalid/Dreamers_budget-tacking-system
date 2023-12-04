@@ -1,4 +1,5 @@
-Dreamers Budget Tracking System
+{
+    Dreamers Budget Tracking System
 The Dreamers Budget Tracking System is a simple and intuitive application designed to help users effectively manage and track their personal finances. This system provides a user-friendly interface to record expenses, monitor income, and generate insightful reports, empowering individuals to make informed financial decisions.
 
 Features
@@ -47,6 +48,4 @@ This project is licensed under the M.I.T. License - see the LICENSE file for det
 
 Acknowledgments
 Special thanks to Perline and the entire B.S.E. coaching staff for inspiration and guidance during the development of this project.
-
-
-
+}
