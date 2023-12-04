@@ -4,12 +4,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login and Signup Forms</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            /* Adjust the width as needed */
+        }
+        
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+        }
+        
+        input,
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            display: inline-block;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+        
+        .signup-link {
+            text-align: center;
+            margin-top: 10px;
+        }
+        
+        .signup-link a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+        
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 
 <body>
-    <h3>Please create your account here</h3>
-    <form>Fill your informations here</form>
+    <div>
+        <form id="loginForm">
+            <h2>Login to your account</h2>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Login</button>
+        </form>
+
+        <div class="signup-link">
+            <p>Don't have an account? <a href="#signupForm">Sign up here</a>.</p>
+        </div>
+
+        <form id="signupForm" style="display: none;">
+            <h2>Sign up for a new account</h2>
+            <label for="firstName">Firstname:</label>
+            <input type="text" id="firstName" name="firstName" required>
+
+            <label for="secondName">Secondname:</label>
+            <input type="text" id="secondName" name="secondName" required>
+
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="">Select Gender</option>
+                <option value="female">Female</option>
+                <option value="male">Male</option>
+            </select>
+
+            <label for="maritalStatus">Marital Status:</label>
+            <select id="maritalStatus" name="maritalStatus" required>
+                <option value="">Select Marital Status</option>
+                <option value="single">Single</option>
+                <option value="married">Married</option>
+            </select>
+
+            <label for="yourpost">Do you have a job?:</label>
+            <select id="yourpost" name="yourpost" required>
+                <option value="">Select Option</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+
+            <label for="jobPosition">Job Position:</label>
+            <input type="text" id="jobPosition" name="jobPosition" required>
+
+            <label for="newUsername">Username:</label>
+            <input type="text" id="newUsername" name="newUsername" required>
+
+            <label for="newPassword">Password:</label>
+            <input type="password" id="newPassword" name="newPassword" required>
+
+            <button type="submit">Sign up</button>
+        </form>
+    </div>
+
+    <script>
+        document.querySelector('.signup-link a').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.getElementById('loginForm').style.display = 'none';
+            document.getElementById('signupForm').style.display = 'block';
+        });
+    </script>
 </body>
 
 </html>
